@@ -39,9 +39,9 @@ function ServiceCard({ icon: Icon, title, points }) {
 function About() {
   return (
     <section id="about" className="relative py-24">
-      {/* Animated background */}
+      {/* Animated background (unified with Hero) */}
       <div className="absolute inset-0">
-        <Spline scene="https://prod.spline.design/LU2mWMPbF3Qi1Qxh/scene.splinecode" style={{ width: '100%', height: '100%' }} />
+        <Spline scene="https://prod.spline.design/vc19ejtcC5VJjy5v/scene.splinecode" style={{ width: '100%', height: '100%' }} />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -92,9 +92,9 @@ function Services() {
 
   return (
     <section id="services" className="relative py-28">
-      {/* Spline background to cover the section */}
+      {/* Spline background (unified with Hero) */}
       <div className="absolute inset-0">
-        <Spline scene="https://prod.spline.design/LU2mWMPbF3Qi1Qxh/scene.splinecode" style={{ width: '100%', height: '100%' }} />
+        <Spline scene="https://prod.spline.design/vc19ejtcC5VJjy5v/scene.splinecode" style={{ width: '100%', height: '100%' }} />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -115,9 +115,9 @@ function Skills() {
   const skills = ['Brand Strategy', 'UI/UX', 'Motion Design', 'React', 'Tailwind CSS', 'Framer Motion', 'SEO', 'Analytics', 'CRO']
   return (
     <section id="skills" className="relative py-24">
-      {/* Metallic cubes background (distinct from hero cover) */}
+      {/* Unified background to match the hero cover */}
       <div className="absolute inset-0">
-        <Spline scene="https://prod.spline.design/Gt5HUob8aGDxOUep/scene.splinecode" style={{ width: '100%', height: '100%' }} />
+        <Spline scene="https://prod.spline.design/vc19ejtcC5VJjy5v/scene.splinecode" style={{ width: '100%', height: '100%' }} />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -145,9 +145,9 @@ function FAQs() {
   ]
   return (
     <section id="faqs" className="relative py-24">
-      {/* Animated background */}
+      {/* Animated background (unified with Hero) */}
       <div className="absolute inset-0">
-        <Spline scene="https://prod.spline.design/LU2mWMPbF3Qi1Qxh/scene.splinecode" style={{ width: '100%', height: '100%' }} />
+        <Spline scene="https://prod.spline.design/vc19ejtcC5VJjy5v/scene.splinecode" style={{ width: '100%', height: '100%' }} />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -175,9 +175,9 @@ function Testimonials() {
   ]
   return (
     <section id="testimonials" className="relative py-24">
-      {/* Metallic cubes background (distinct from hero cover) */}
+      {/* Unified background to match the hero cover */}
       <div className="absolute inset-0">
-        <Spline scene="https://prod.spline.design/Gt5HUob8aGDxOUep/scene.splinecode" style={{ width: '100%', height: '100%' }} />
+        <Spline scene="https://prod.spline.design/vc19ejtcC5VJjy5v/scene.splinecode" style={{ width: '100%', height: '100%' }} />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -208,9 +208,9 @@ function Blog() {
   ]
   return (
     <section id="blog" className="relative py-24">
-      {/* Animated background */}
+      {/* Animated background (unified with Hero) */}
       <div className="absolute inset-0">
-        <Spline scene="https://prod.spline.design/LU2mWMPbF3Qi1Qxh/scene.splinecode" style={{ width: '100%', height: '100%' }} />
+        <Spline scene="https://prod.spline.design/vc19ejtcC5VJjy5v/scene.splinecode" style={{ width: '100%', height: '100%' }} />
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
