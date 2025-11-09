@@ -1,7 +1,7 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import Showcase from './components/Showcase'
-import Contact from './components/Contact'
+import Work from './components/Work'
+import Sections from './components/Sections'
 import Footer from './components/Footer'
 
 function App() {
@@ -10,8 +10,8 @@ function App() {
       <Navbar />
       <main>
         <Hero />
-        <Showcase />
-        <Contact />
+        <Work />
+        <Sections />
       </main>
       <Footer />
     </div>
