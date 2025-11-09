@@ -14,8 +14,7 @@ function SectionTitle({ eyebrow, title, subtitle }) {
       <h2 className="mt-4 text-3xl sm:text-4xl font-bold text-white">{title}</h2>
       {subtitle && <p className="mt-3 text-white/70">{subtitle}</p>}
     </div>
-  )
-}
+  )}
 
 function ServiceCard({ icon: Icon, title, points }) {
   return (
@@ -116,7 +115,7 @@ function Skills() {
   const skills = ['Brand Strategy', 'UI/UX', 'Motion Design', 'React', 'Tailwind CSS', 'Framer Motion', 'SEO', 'Analytics', 'CRO']
   return (
     <section id="skills" className="relative py-24">
-      {/* Match Home background theme */}
+      {/* Metallic cubes background (distinct from hero cover) */}
       <div className="absolute inset-0">
         <Spline scene="https://prod.spline.design/Gt5HUob8aGDxOUep/scene.splinecode" style={{ width: '100%', height: '100%' }} />
       </div>
@@ -176,7 +175,7 @@ function Testimonials() {
   ]
   return (
     <section id="testimonials" className="relative py-24">
-      {/* Match Home background theme */}
+      {/* Metallic cubes background (distinct from hero cover) */}
       <div className="absolute inset-0">
         <Spline scene="https://prod.spline.design/Gt5HUob8aGDxOUep/scene.splinecode" style={{ width: '100%', height: '100%' }} />
       </div>
