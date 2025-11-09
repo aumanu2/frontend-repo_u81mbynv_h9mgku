@@ -116,7 +116,12 @@ function Skills() {
   const skills = ['Brand Strategy', 'UI/UX', 'Motion Design', 'React', 'Tailwind CSS', 'Framer Motion', 'SEO', 'Analytics', 'CRO']
   return (
     <section id="skills" className="relative py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      {/* Match Home background theme */}
+      <div className="absolute inset-0">
+        <Spline scene="https://prod.spline.design/Gt5HUob8aGDxOUep/scene.splinecode" style={{ width: '100%', height: '100%' }} />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionTitle eyebrow="Skills" title="Skills that speak for me" />
         <div className="mt-8 flex flex-wrap gap-3">
           {skills.map((s) => (
@@ -127,6 +132,7 @@ function Skills() {
           ))}
         </div>
       </div>
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80" />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
     </section>
   )
@@ -170,7 +176,12 @@ function Testimonials() {
   ]
   return (
     <section id="testimonials" className="relative py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      {/* Match Home background theme */}
+      <div className="absolute inset-0">
+        <Spline scene="https://prod.spline.design/Gt5HUob8aGDxOUep/scene.splinecode" style={{ width: '100%', height: '100%' }} />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionTitle eyebrow="Clients" title="What clients say" />
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           {items.map((t) => (
@@ -184,6 +195,7 @@ function Testimonials() {
           ))}
         </div>
       </div>
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80" />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
     </section>
   )
