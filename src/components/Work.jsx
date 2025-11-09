@@ -1,5 +1,35 @@
 import Spline from '@splinetool/react-spline'
 
+function GlowLink({ children, href = '#', className = '' }) {
+  function handleMove(e) {
+    const t = e.currentTarget
+    const rect = t.getBoundingClientRect()
+    const x = (e.clientX ?? e.touches?.[0]?.clientX) - rect.left
+    const y = (e.clientY ?? e.touches?.[0]?.clientY) - rect.top
+    t.style.setProperty('--x', `${x}px`)
+    t.style.setProperty('--y', `${y}px`)
+  }
+  return (
+    <a
+      href={href}
+      onMouseMove={handleMove}
+      onTouchStart={handleMove}
+      onTouchMove={handleMove}
+      className={`relative inline-flex text-cyan-300 hover:text-fuchsia-300 transition-colors ${className}`}
+      style={{ WebkitTapHighlightColor: 'transparent' }}
+    >
+      <span
+        className="pointer-events-none absolute -inset-3 rounded-full opacity-70"
+        style={{
+          background:
+            'radial-gradient(100px circle at var(--x,50%) var(--y,50%), rgba(34,211,238,0.25), rgba(217,70,239,0.2), rgba(251,191,36,0.15), transparent 60%)',
+        }}
+      />
+      <span className="relative">{children}</span>
+    </a>
+  )
+}
+
 function WorkCard({ title, desc, cta }) {
   return (
     <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-black/40 p-6 backdrop-blur-xl">
@@ -7,7 +37,7 @@ function WorkCard({ title, desc, cta }) {
       <div className="relative z-10">
         <h3 className="text-lg font-semibold text-white">{title}</h3>
         <p className="mt-2 text-sm text-white/70">{desc}</p>
-        <a href="#contact" className="mt-4 inline-flex text-cyan-300 hover:text-fuchsia-300 transition-colors">{cta}</a>
+        <GlowLink href="#contact" className="mt-4">{cta}</GlowLink>
       </div>
     </div>
   )
@@ -22,7 +52,7 @@ export default function Work() {
 
   return (
     <section id="work" className="relative py-28">
-      {/* Spline background to ensure animated cover across this section */}
+      {/* Animated section background */}
       <div className="absolute inset-0">
         <Spline scene="https://prod.spline.design/LU2mWMPbF3Qi1Qxh/scene.splinecode" style={{ width: '100%', height: '100%' }} />
       </div>

@@ -2,9 +2,31 @@ import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 
 function GlowButton({ children, className = '' }) {
+  function handleMove(e) {
+    const t = e.currentTarget
+    const rect = t.getBoundingClientRect()
+    const x = (e.clientX ?? e.touches?.[0]?.clientX) - rect.left
+    const y = (e.clientY ?? e.touches?.[0]?.clientY) - rect.top
+    t.style.setProperty('--x', `${x}px`)
+    t.style.setProperty('--y', `${y}px`)
+  }
+
   return (
-    <button className={`relative group inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-medium text-white transition-colors ${className}`}>
-      <span className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-amber-400 blur-xl opacity-60 group-hover:opacity-90 transition-opacity duration-300" />
+    <button
+      onMouseMove={handleMove}
+      onTouchStart={handleMove}
+      onTouchMove={handleMove}
+      className={`relative group inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-medium text-white transition-transform active:scale-[0.98] ${className}`}
+      style={{ WebkitTapHighlightColor: 'transparent' }}
+    >
+      <span
+        className="pointer-events-none absolute -inset-3 rounded-full opacity-70 transition-opacity duration-300 group-hover:opacity-100"
+        style={{
+          background:
+            'radial-gradient(120px circle at var(--x,50%) var(--y,50%), rgba(34,211,238,0.35), rgba(217,70,239,0.25), rgba(251,191,36,0.2), transparent 60%)',
+        }}
+      />
+      <span className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-amber-400 blur-xl opacity-50 group-hover:opacity-80 transition-opacity duration-300" />
       <span className="relative z-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 px-5 py-2.5">{children}</span>
     </button>
   )

@@ -1,12 +1,26 @@
 import Spline from '@splinetool/react-spline'
 
 function GlowCTA({ children, href = '#', className = '' }) {
+  function handleMove(e) {
+    const target = e.currentTarget
+    const rect = target.getBoundingClientRect()
+    const x = e.clientX - rect.left
+    const y = e.clientY - rect.top
+    target.style.setProperty('--x', `${x}px`)
+    target.style.setProperty('--y', `${y}px`)
+  }
+
   return (
     <a
       href={href}
-      className={`relative group inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-white ${className}`}
+      onMouseMove={handleMove}
+      onTouchStart={(e) => handleMove(e.touches[0])}
+      onTouchMove={(e) => handleMove(e.touches[0])}
+      className={`relative group inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-white transition-transform active:scale-[0.98] ${className}`}
+      style={{ WebkitTapHighlightColor: 'transparent' }}
     >
-      <span className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-amber-400 blur-xl opacity-60 group-hover:opacity-90 transition-opacity duration-300" />
+      <span className="pointer-events-none absolute -inset-3 rounded-full opacity-70 transition-opacity duration-300 group-hover:opacity-100" style={{ background: 'radial-gradient(120px circle at var(--x,50%) var(--y,50%), rgba(34,211,238,0.35), rgba(217,70,239,0.25), rgba(251,191,36,0.2), transparent 60%)' }} />
+      <span className="absolute inset-0 rounded-full bg-gradient-to-r from-cyan-400 via-fuchsia-500 to-amber-400 blur-xl opacity-50 group-hover:opacity-80 transition-opacity duration-300" />
       <span className="relative z-10 rounded-full bg-white/10 backdrop-blur-md border border-white/20 px-6 py-3">
         {children}
       </span>
@@ -18,7 +32,7 @@ export default function Hero() {
   return (
     <section id="home" className="relative h-[90vh] w-full overflow-hidden">
       <div className="absolute inset-0">
-        <Spline scene="https://prod.spline.design/kqB-rdL4TCJ7pyGb/scene.splinecode" style={{ width: '100%', height: '100%' }} />
+        <Spline scene="https://prod.spline.design/Z9BMpz-LA54Dlbrj/scene.splinecode" style={{ width: '100%', height: '100%' }} />
       </div>
 
       <div className="relative z-10 h-full">
