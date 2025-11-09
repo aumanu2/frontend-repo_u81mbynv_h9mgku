@@ -40,7 +40,12 @@ function ServiceCard({ icon: Icon, title, points }) {
 function About() {
   return (
     <section id="about" className="relative py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      {/* Animated background */}
+      <div className="absolute inset-0">
+        <Spline scene="https://prod.spline.design/LU2mWMPbF3Qi1Qxh/scene.splinecode" style={{ width: '100%', height: '100%' }} />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionTitle eyebrow="About" title="About Me" subtitle="I build animated, high-converting experiences that blend branding, motion, and performance." />
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           <div className="relative rounded-2xl border border-white/10 bg-black/50 p-6 backdrop-blur-xl">
@@ -55,6 +60,8 @@ function About() {
           </div>
         </div>
       </div>
+
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80" />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
     </section>
   )
@@ -133,7 +140,12 @@ function FAQs() {
   ]
   return (
     <section id="faqs" className="relative py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      {/* Animated background */}
+      <div className="absolute inset-0">
+        <Spline scene="https://prod.spline.design/LU2mWMPbF3Qi1Qxh/scene.splinecode" style={{ width: '100%', height: '100%' }} />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionTitle eyebrow="FAQs" title="Frequently Asked Questions" />
         <div className="mt-10 grid gap-4 md:grid-cols-2">
           {faqs.map((f) => (
@@ -144,6 +156,8 @@ function FAQs() {
           ))}
         </div>
       </div>
+
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80" />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
     </section>
   )
@@ -183,7 +197,12 @@ function Blog() {
   ]
   return (
     <section id="blog" className="relative py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      {/* Animated background */}
+      <div className="absolute inset-0">
+        <Spline scene="https://prod.spline.design/LU2mWMPbF3Qi1Qxh/scene.splinecode" style={{ width: '100%', height: '100%' }} />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionTitle eyebrow="Blog" title="Insights & Articles" />
         <div className="mt-10 grid gap-6 md:grid-cols-3">
           {posts.map((p) => (
@@ -195,6 +214,8 @@ function Blog() {
           ))}
         </div>
       </div>
+
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-black/80" />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
     </section>
   )
